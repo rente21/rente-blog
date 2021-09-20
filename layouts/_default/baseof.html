@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+  </head>
+  <body>
+    <header><a href="/">rente blog</a></header>
+    <div id="content">
+      <div class="container">{{ block "main" . }}{{ end }}</div>
+    </div>
+  </body>
+</html>

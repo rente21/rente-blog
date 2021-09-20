@@ -1,0 +1,43 @@
+{{ define "title" }} {{ .Title }} | {{ .Site.Title }} {{ end }} {{ define "main"
+}}
+
+<h1>{{ .Title }}</h1>
+{{.Date.Format "2006-01-02"}} {{ with .Params.tags -}} {{ range . }}
+<a class="tag" href="/tags/{{ lower . }}/">{{ . }}</a>
+{{ end }} {{- end }} {{ .Content }}
+
+<style>
+  pre code {
+    display: block;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .code-name {
+    display: inline-block;
+    position: relative;
+    padding: 4px 8px;
+    background-color: #e7e9eb;
+    color: #485a60;
+    font-size: 13px;
+    font-weight: 400;
+  }
+</style>
+
+<script>
+  var list = document.body.getElementsByClassName('highlight');
+
+  for (i = 0; i <= list.length - 1; i++) {
+    var code = list[i].firstElementChild.firstElementChild;
+    var codeName = code ? code.className.split(':')[1] : null;
+
+    if (codeName) {
+      var div = document.createElement('div');
+      div.textContent = codeName;
+      div.classList.add('code-name');
+      code.parentNode.insertBefore(div, code);
+    }
+  }
+</script>
+
+{{ end }}

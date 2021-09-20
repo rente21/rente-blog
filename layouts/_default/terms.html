@@ -1,0 +1,5 @@
+{{ define "main" }}
+<h1>タグ一覧</h1>
+{{ range .Data.Terms }}
+<a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+{{ end }} {{ end }}

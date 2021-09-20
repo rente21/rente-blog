@@ -1,0 +1,4 @@
+baseURL = 'https://rente.jp'
+languageCode = 'ja'
+title = 'rente blog'
+hasCJKLanguage = true
