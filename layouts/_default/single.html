@@ -11,6 +11,7 @@
     display: block;
     font-size: 16px;
     padding: 12px;
+    overflow: scroll;
   }
 
   .code-name {
@@ -31,12 +32,15 @@
 </style>
 
 <script>
-  var list = document.body.getElementsByClassName('highlight');
+  var list = document.querySelectorAll('.language-ApacheConf');
+  for (i = 0; i <= list.length - 1; i++) {
+    list[i].className = 'language-ApacheConf:.htaccess';
+  }
 
+  var list = document.body.querySelectorAll('.highlight');
   for (i = 0; i <= list.length - 1; i++) {
     var code = list[i].firstElementChild.firstElementChild;
     var codeName = code ? code.className.split(':')[1] : null;
-
     if (codeName) {
       var div = document.createElement('div');
       div.textContent = codeName;
