@@ -24,7 +24,7 @@ CDN のキャッシュクリアは非常に優秀なので、それを活用す�
 以下 Apache+PHP 構成での例を示す。  
 環境に応じてカスタマイズして欲しい。
 
-```ApacheConf
+```ApacheConf {fn=".htaccess"}
 Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -33,14 +33,14 @@ RewriteRule ^ index.html [QSA,L]
 
 ↓
 
-```ApacheConf
+```ApacheConf {fn=".htaccess"}
 Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ spa.php [QSA,L] # 変更したところ
 ```
 
-```php:spa.php
+```php {fn="spa.php"}
 <?php
 readfile("https://******.cloudfront.net/index.html");
 ```
