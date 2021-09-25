@@ -177,7 +177,7 @@ const CallAreaMain: React.FC<{
 
       {/* 音声 ON/OFF */}
       <button onClick={toggle_audio}>
-        {audio_on === true ? '○音声がオンです' : '○音声がオフです'}
+        {audio_on === true ? '○音声がオンです' : '✖︎音声がオフです'}
       </button>
 
       {/* ビデオ ON/OFF */}
