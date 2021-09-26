@@ -11,7 +11,7 @@ hugo のコードブロックにタイトルをつける方法を解説してい
 
 そこで.htaccess などの**拡張子がないファイルも含め、全て対応できる方法**を紹介する。
 
-## Markdown の Attribute 機能を使用する {nuxt="cnkcnkd"}
+## Markdown の Attribute 機能を使用する
 
 Markdown には Attribute という属性を付与する機能がある。  
 例えば、このようにすると

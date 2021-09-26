@@ -4,7 +4,7 @@ date: 2021-09-25
 tags: ['React', 'Skyway']
 ---
 
-今回実装する機能は以下の通りです。
+今回実装する機能
 
 - 発信&受信
 - ビデオ on/off
@@ -13,12 +13,12 @@ tags: ['React', 'Skyway']
 
 ## 初期設定
 
-① こちらから Skyway に登録します。  
+① Skyway に登録  
 https://webrtc.ecl.ntt.com/
 
-② 登録後、アプリケーションを作成+利用可能ドメインを設定し(localhost 等)、API キーをメモします。
+② 登録後、アプリケーションを作成+利用可能ドメインを設定し(localhost 等)、API キーをメモ
 
-③ プロジェクトにパッケージをインストールします。
+③ プロジェクトにパッケージをインストール
 
 ```shell
 yarn add skyway-js
@@ -26,7 +26,7 @@ yarn add skyway-js
 
 ## 本題
 
-TypeScript で書いてます。
+TypeScript を使用
 
 ```tsx {fn="skyway-sample.tsx"}
 import { useEffect, useState, useRef } from 'react';
