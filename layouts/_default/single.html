@@ -3,7 +3,7 @@
 
 <h1>{{ .Title }}</h1>
 {{.Date.Format "2006-01-02"}} {{ with .Params.tags -}} {{ range . }}
-<a class="tag" href="/tags/{{ lower . }}/">{{ . }}</a>
+<a class="tag" href="/tags/{{ replace (lower .) " " "-" }}/">{{ . }}</a>
 {{ end }} {{- end }} {{ .Content }}
 
 <style>
