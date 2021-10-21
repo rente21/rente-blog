@@ -1,0 +1,5 @@
+[[redirects]]
+from = 'https://rente.jp/*'
+to = 'https://r-blog.org/:splat'
+status = 301
+force = true
