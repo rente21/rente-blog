@@ -1,4 +1,10 @@
-baseURL = 'https://rente.jp'
+baseURL = 'https://r-blog.org'
 languageCode = 'ja'
 title = 'r blog'
 hasCJKLanguage = true
+
+[[redirects]]
+from = "https://rente.jp/*"
+to = "https://r-blog.org/:splat"
+status = 301
+force = true
