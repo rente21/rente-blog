@@ -1,10 +1,17 @@
 {{ define "title" }} {{ .Title }} | {{ .Site.Title }} {{ end }} {{ define "main"
 }}
 
+<div class="date">
+  {{.Date.Format "2006-01-02"}}
+  <span class="tag_list">
+    {{ with .Params.tags -}} {{ range . }}
+    <a class="tag" href="/tags/{{ replace (lower .) " " "-" }}/">{{ . }}</a>
+    {{ end }} {{- end }}
+  </span>
+</div>
 <h1>{{ .Title }}</h1>
-{{.Date.Format "2006-01-02"}} {{ with .Params.tags -}} {{ range . }}
-<a class="tag" href="/tags/{{ replace (lower .) " " "-" }}/">{{ . }}</a>
-{{ end }} {{- end }} {{ .Content }}
+{{ .TableOfContents }}
+{{ .Content }}
 
 <style>
   pre code {
@@ -28,6 +35,34 @@
     display: block;
     width: 100%;
     max-width: 500px;
+  }
+
+  .date {
+    margin: 0 0 16px;
+  }
+
+  .tag_list {
+    margin-left: 8px;
+  }
+
+  h1 {
+    margin: 0 0 24px;
+  }
+
+  h2,h3 {
+    margin: 0 0 16px;
+  }
+
+  p, pre {
+    margin: 0 0 32px;
+  }
+
+  #TableOfContents ul {
+    list-style: none;
+  }
+  #TableOfContents>ul {
+    margin: 0 0 24px;
+    padding: 0;
   }
 </style>
 
